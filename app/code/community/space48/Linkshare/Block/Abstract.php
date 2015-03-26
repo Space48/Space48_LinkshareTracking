@@ -6,13 +6,12 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      *
      * @return bool
      */
-
     public function isEnabled()
     {
-        if($this->getMerchantId() == false){
+        if ($this->getMerchantId() == false) {
             return false;
         }
-        if($this->getLinkshareProtocol() == false){
+        if ($this->getLinkshareProtocol() == false) {
             return false;
         }
         return true;
@@ -23,7 +22,6 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      *
      * @return string
      */
-
     protected function _toHtml()
     {
         if (!$this->isEnabled()) {
@@ -70,7 +68,6 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      *
      * @return str | int StoreId
      */
-
     protected function getStoreId()
     {
         return Mage::app()->getStore()->getStoreId();
@@ -81,7 +78,6 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      *
      * @return string currency code
      */
-
     public function getCurrencyCode($storeId = null)
     {
         return $this->_getHelper()->getCurrencyCode($storeId);
@@ -93,7 +89,6 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      *
      * @return int mixed MID for the LinkShare system
      */
-
     public function getMerchantId($storeId = null)
     {
         return Mage::getStoreConfig('Space48_Linkshare/linkshare/mid', $storeId);
@@ -104,7 +99,6 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      *
      * @return string HTTP/S protocol to use.
      */
-
     public function getLinkshareProtocol()
     {
         return Mage::getStoreConfig('Space48_Linkshare/linkshare/protocol');
@@ -115,7 +109,6 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      *
      * @return helper Object
      */
-
     protected function _getHelper()
     {
         return Mage::helper('space48_linkshare');
@@ -128,12 +121,10 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      */
     protected function removeInvalidChars($str)
     {
-        if(strpos($str, '|')) {
+        if (strpos($str, '|')) {
             return str_replace('|','-',$str);
         }
         return $str;
 
     }
-
-
 }

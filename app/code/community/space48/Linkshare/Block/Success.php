@@ -4,7 +4,6 @@ class Space48_Linkshare_Block_Success extends Space48_Linkshare_Block_Abstract
     /**
      * constructor
      */
-
     public function _construct()
     {
         parent::_construct();
