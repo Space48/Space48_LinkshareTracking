@@ -25,11 +25,11 @@ class Space48_Linkshare_Block_Success extends Space48_Linkshare_Block_Abstract
         $imgTagArray = array();
         if ($order = $this->getLastOrder()) {
 
-            $imgTagArray['src']   = $this->_getHelper()->getLinkshareUrl($storeId);
-            $imgTagArray['mid']   = Mage::getStoreConfig('Space48_Linkshare/linkshare/mid',$storeId);
-            $imgTagArray['ord']   = $this->getLastOrderId();
-            $imgTagArray['cur']   = $this->getCurrencyCode($storeId);
-            $imgTagArray['lines'] = $this->getTrackingLinesString($order,$storeId = null);
+            $imgTagArray['src']   = trim($this->_getHelper()->getLinkshareUrl($storeId));
+            $imgTagArray['mid']   = trim(Mage::getStoreConfig('Space48_Linkshare/linkshare/mid',$storeId));
+            $imgTagArray['ord']   = trim($this->getLastOrderId());
+            $imgTagArray['cur']   = trim($this->getCurrencyCode($storeId));
+            $imgTagArray['lines'] = trim($this->getTrackingLinesString($order,$storeId = null));
         }
         return $imgTagArray;
     }
@@ -62,8 +62,7 @@ class Space48_Linkshare_Block_Success extends Space48_Linkshare_Block_Abstract
             'skulist=' .  implode('|', $skus) . '&' .
             'amtlist=' . implode('|', $amts) . '&' .
             'qlist=' . implode('|', $qtys) . '&' .
-            'namelist=' . implode('|', $name) . '&' .
-            'cur=' .      implode('|', $this->getCurrencyCode($storeId));
+            'namelist=' . implode('|', $name);
 
         return $trackingLines;
     }

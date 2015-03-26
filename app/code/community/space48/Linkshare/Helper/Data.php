@@ -29,11 +29,21 @@ class Space48_Linkshare_Helper_Data extends Mage_Core_Helper_Abstract
         return $this->_cookieLifeSecondsDefault * 1000;
     }
 
+    /**
+     * Get the Cookie Time
+     *
+     * @return string time in MS
+     */
     public function getCookieTime($storeId)
     {
         return $this->getCookieTimeMS($storeId);
     }
 
+    /**
+     * Get the Linkshare URL HTTPS or HTTP
+     *
+     * @return string url
+     */
     public function getLinkshareUrl($storeId = null)
     {
         if ($url = Mage::getStoreConfig('Space48_Linkshare/linkshare/protocol', $storeId)) {

@@ -3,7 +3,7 @@
 <?php if (($this->isEnabled()) && ($cookie == 'linkshare')) : ?>
     <?php
     if ($imgTagArray = $this->getImageTag()) {
-        $imgTag = '<img src="' . $imgTagArray['src'] . '"/ep?mid=' . $imgTagArray['mid'] .
+        $imgTag = '<img src="' . $imgTagArray['src'] . '/ep?mid=' . $imgTagArray['mid'] .
             '&ord=' . $imgTagArray['ord'] .
             '&cur=' . $imgTagArray['cur'] .
             '&' . $imgTagArray['lines'] .

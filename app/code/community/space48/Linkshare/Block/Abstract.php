@@ -40,7 +40,6 @@ class Space48_Linkshare_Block_Abstract extends Mage_Core_Block_Template
      */
     protected function getLastOrderId()
     {
-        return 100028129;
         return Mage::getSingleton('checkout/session')->getLastRealOrderId();
     }
 
