@@ -1,0 +1,14 @@
+<?php $cookie = Mage::getModel('core/cookie')->get('affiliatenetwork');?>
+
+<?php if (($this->isEnabled()) && ($cookie == 'linkshare')) : ?>
+    <?php
+    if ($imgTagArray = $this->getImageTag()) {
+        $imgTag = '<img src="' . $imgTagArray['src'] . '"/ep?mid=' . $imgTagArray['mid'] .
+            '&ord=' . $imgTagArray['ord'] .
+            '&cur=' . $imgTagArray['cur'] .
+            '&' . $imgTagArray['lines'] .
+            '&img=1" width="1" height="1">';
+    }
+    ?>
+    <?php echo $imgTag; ?>
+<?php endif; ?>
